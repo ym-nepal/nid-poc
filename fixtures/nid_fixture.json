@@ -1,0 +1,24 @@
+[
+  {
+    "model": "nid.NID",
+    "pk": 1,
+    "fields": {
+      "nid": 1234567890123456,
+      "fullname": "John Doe",
+      "dob": "1990-01-01",
+      "address": "123 Main Street",
+      "gender": "Male"
+    }
+  },
+  {
+    "model": "nid.NID",
+    "pk": 2,
+    "fields": {
+      "nid": 2345678901234567,
+      "fullname": "Jane Smith",
+      "dob": "1985-05-15",
+      "address": "456 Elm Street",
+      "gender": "Female"
+    }
+  }
+]
