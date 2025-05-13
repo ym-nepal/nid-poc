@@ -19,8 +19,7 @@ class NID(models.Model):
 
 
 class NIDUser(models.Model):
-    user = models.ForeignKey("users.User", on_delete=models.CASCADE)
-    nid = models.ForeignKey("nid.NID", on_delete=models.CASCADE)
+    nid = models.BigIntegerField()
     photo = models.ImageField(upload_to="nid_photos")
 
     def __str__(self):

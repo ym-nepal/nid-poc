@@ -10,14 +10,7 @@ class NIDSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class NIDUserSerializer(serializers.ModelSerializer):
-    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
-    nid_data = NIDSerializer(source='nid')
-    user_data = serializers.StringRelatedField(source='user')
-    
+class NIDUserSerializer(serializers.ModelSerializer):    
     class Meta:
         model = NIDUser
         fields = '__all__'
-        extra_kwargs = {
-            'nid': {'write_only': True}
-        }
