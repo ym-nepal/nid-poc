@@ -8,7 +8,7 @@ from rest_framework.response import Response
 class NIDViewSet(viewsets.ModelViewSet):
     queryset = NID.objects.all()
     serializer_class = NIDSerializer
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_permissions(self):
         if self.action == 'verify_nid':
