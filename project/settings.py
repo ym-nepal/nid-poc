@@ -144,8 +144,8 @@ from datetime import timedelta
 
 # Simple JWT settings
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),  # Set this to whatever time you'd prefer
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),  # You can also adjust the refresh token time
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=100),  # Set this to whatever time you'd prefer
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=100),  # You can also adjust the refresh token time
     'ROTATE_REFRESH_TOKENS': False,  # Whether to rotate refresh tokens on each refresh
     'BLACKLIST_AFTER_ROTATION': False,  # Whether to blacklist refresh tokens after rotation
     'ALGORITHM': 'HS256',  # The algorithm to use for encoding the JWT token
