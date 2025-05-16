@@ -37,3 +37,9 @@ class NIDUserViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 
+from django.shortcuts import render
+from .models import NIDUser
+
+def nid_gallery_view(request):
+    users = NIDUser.objects.all()
+    return render(request, "nid_gallery.html", {"users": users})

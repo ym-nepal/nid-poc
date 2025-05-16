@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NID Photo Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-white min-h-screen font-sans text-gray-800">
+    <div class="mx-auto py-12 px-6">
+        <h1 class="text-5xl font-extrabold text-center text-blue-700 mb-12 drop-shadow">NID Photo Gallery</h1>
+
+        {% if users %}
+            <div class="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                {% for user in users %}
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 p-4">
+                        <div class="overflow-hidden rounded-lg mb-4">
+                            <img src="{{ user.photo.url }}"
+                                 alt="NID Photo"
+                                 class="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform duration-300 border border-gray-200 shadow-sm" />
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xl font-semibold text-gray-700">NID: {{ user.nid }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center mt-20 text-gray-500">
+                <p class="text-2xl font-medium">No NID photos available yet.</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

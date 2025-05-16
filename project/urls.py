@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
+from nid.views import nid_gallery_view
 
 
 schema_view = get_schema_view(
@@ -24,6 +25,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('users.urls')),
+    path("nid-gallery/", nid_gallery_view, name="nid_gallery"),
 
       # Swagger UI
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
@@ -33,6 +35,7 @@ urlpatterns = [
 
     # Raw schema (JSON/YAML)
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+
 ]
 
 if settings.DEBUG:
